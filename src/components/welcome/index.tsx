@@ -1,46 +1,43 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import imgDoctor from '../../../assets/images/doctor.png';
+import { Image, StyleSheet, Text, View, TouchableOpacity, SafeAreaView } from 'react-native';
 import { Header } from './../../layout/header/index';
+import imgDoctor from '../../../assets/images/doctor.png';
+// import SwiperControl from '../../libs/components/swiper';
 
-export const Welcome = () => {
+export const Welcome = ({ navigation }: any) => {
 	return (
-		<View style={styles.welcome}>
-			<Header />
-			<View style={styles.wrTitle}>
-				<Text style={styles.title}>This is Health UX Kit, Welcome!</Text>
-				<Text style={styles.description}>A health vertical UI kit made with love for Adobe XD</Text>
+		<SafeAreaView>
+			<View style={styles.welcome}>
+				<Header />
+				<View style={styles.wrTitle}>
+					<Text style={styles.title}>This is Health UX Kit, Welcome!</Text>
+					<Text style={styles.description}>A health vertical UI kit made with love for Adobe XD</Text>
+				</View>
+				{/* <SwiperControl /> */}
+				<View style={styles.wrDoctor}>
+					<Image source={imgDoctor} style={styles.imgDoctor} />
+				</View>
+				<View style={styles.wrBtn}>
+					<TouchableOpacity onPress={() => alert('Hello, world!')} style={styles.btnStarted}>
+						<Text style={styles.btnText}>Get started</Text>
+					</TouchableOpacity>
+				</View>
+				<View style={styles.wrDoctor}>
+					<Text style={styles.textBottom}>Already have an account?</Text>
+					<TouchableOpacity onPress={() => navigation.navigate('Login')}>
+						<Text style={styles.btnTextSignin}> Sign in</Text>
+					</TouchableOpacity>
+				</View>
 			</View>
-			<View style={styles.wrDoctor}>
-				<Image source={imgDoctor} style={styles.imgDoctor} />
-			</View>
-			<View style={styles.wrBtn}>
-        <TouchableOpacity
-          onPress={() => alert('Hello, world!')}
-          style={styles.btnStarted}
-        >
-          <Text style={styles.btnText}>Get started</Text>
-				</TouchableOpacity>
-      </View>
-      <View style={styles.wrDoctor}>
-        <Text style={styles.textBottom}>
-          Already have an account? 
-        </Text>
-        <TouchableOpacity
-          onPress={() => alert('Sign in')}
-        >
-          <Text style={styles.btnTextSignin}> Sign in</Text>
-				</TouchableOpacity>
-      </View>
-		</View>
+		</SafeAreaView>
 	);
 };
 
 const styles = StyleSheet.create({
 	welcome: {
 		marginTop: 24,
-    marginBottom: 30,
-    padding: 21,
+		marginBottom: 30,
+		padding: 21
 	},
 	sectionTop: {
 		display: 'flex',
@@ -80,31 +77,31 @@ const styles = StyleSheet.create({
 	},
 	imgDoctor: {
 		margin: 'auto'
-  },
-  wrBtn: {
-    marginTop: 24,
-    marginBottom: 10
-  },
-  btnStarted: {
-    backgroundColor: '#7BE495',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
-    height: 50,
-    borderRadius: 48
-  },
-  btnText: {
-    fontSize: 20,
-    color: '#fff',
-    textTransform: 'uppercase',
-  },
-  textBottom: {
-    color: '#68B2A0',
-    fontSize: 11
-  }, 
-  btnTextSignin: {
-    color: "#205072",
-    fontSize: 11
-  },
+	},
+	wrBtn: {
+		marginTop: 24,
+		marginBottom: 10
+	},
+	btnStarted: {
+		backgroundColor: '#7BE495',
+		display: 'flex',
+		justifyContent: 'center',
+		alignItems: 'center',
+		flexDirection: 'row',
+		height: 50,
+		borderRadius: 48
+	},
+	btnText: {
+		fontSize: 20,
+		color: '#fff',
+		textTransform: 'uppercase'
+	},
+	textBottom: {
+		color: '#68B2A0',
+		fontSize: 11
+	},
+	btnTextSignin: {
+		color: '#205072',
+		fontSize: 11
+	}
 });

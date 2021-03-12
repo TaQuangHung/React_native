@@ -1,10 +1,6 @@
 import React from 'react';
-import { Welcome } from './src/components';
+import { Routes } from './src/components';
 
 export default function App() {
-  return (
-    <>
-      <Welcome />
-    </>
-  );
+  return <Routes />;
 }

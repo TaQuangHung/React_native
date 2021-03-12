@@ -3,7 +3,7 @@ import { Image, StyleSheet, View } from 'react-native';
 import imgPlus from '../../../assets/icons/plus.png';
 
 export const Header = () => {
-	return ( 
+	return (
 		<View style={styles.header}>
 			<Image source={imgPlus} style={styles.imgPlus} />
 			<Image source={imgPlus} style={styles.imgPlus} />
@@ -13,7 +13,7 @@ export const Header = () => {
 
 const styles = StyleSheet.create({
 	header: {
-		display: 'flex',
+		display: 'flex', 
 		flexDirection: 'row',
 		justifyContent: 'center',
 		marginBottom: 24
@@ -22,5 +22,5 @@ const styles = StyleSheet.create({
 		width: 15,
 		height: 16,
 		marginRight: 1
-	},
+	}
 });
