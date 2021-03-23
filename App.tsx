@@ -1,6 +1,6 @@
-import React from 'react';
-import { Routes } from './src/components';
+import React from "react";
+import { NavigationApp } from "./src/components";
 
 export default function App() {
-  return <Routes />;
+  return <NavigationApp />;
 }
