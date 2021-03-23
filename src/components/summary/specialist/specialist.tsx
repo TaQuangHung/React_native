@@ -4,19 +4,30 @@ import { SwiperControl, SwiperControlList } from "../../../libs/components";
 import { SafeAreaView } from "react-native-safe-area-context";
 import imgDoctor from "../../../../assets/images/doctor.png";
 import { ItemSpecialist } from "./item-specialist";
+import imgTorres from "../../../../assets/images/torres.jpg";
+import imgAvt from "../../../../assets/images/avatar.jpg";
 
 const data = [
   {
-    id: 1,
-    img: imgDoctor,
+    id: "1",
+    img: imgTorres,
+    name: "Fernando Torres",
+    subject: "Physician",
+    rate: 5,
   },
   {
-    id: 2,
-    img: imgDoctor,
+    id: "2",
+    img: imgAvt,
+    name: "Svyatoslav Taushev",
+    subject: "Maths",
+    rate: 3,
   },
   {
-    id: 3,
-    img: imgDoctor,
+    id: "3",
+    img: imgTorres,
+    name: "Fernando Torres",
+    subject: "Physician",
+    rate: 2,
   },
 ];
 

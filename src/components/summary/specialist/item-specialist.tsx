@@ -8,14 +8,25 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import imgAvt from "../../../../assets/images/torres.jpg";
 import iconRate from "../../../../assets/icons/rate.png";
+
+export const RenderRate = ({ number }: any): any => {
+  const initRate = [];
+  for (let i = 0; i < number; i++) {
+    initRate.push(1);
+  }
+
+  const result = initRate.map((item, i) => {
+    return <Image source={iconRate} key={i} />;
+  });
+  return result;
+};
 
 export const ItemSpecialist = ({ item }: any) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.slide}>
-        <Image source={imgAvt} style={styles.img} />
+        <Image source={item.img} style={styles.img} />
         <View style={{ flex: 1, marginLeft: 15 }}>
           <Text
             style={{
@@ -23,7 +34,7 @@ export const ItemSpecialist = ({ item }: any) => {
               color: "#205072",
             }}
           >
-            Physician
+            {item.subject}
           </Text>
           <Text
             style={{
@@ -31,12 +42,10 @@ export const ItemSpecialist = ({ item }: any) => {
               fontSize: 13,
             }}
           >
-            Svyatoslav Taushev
+            {item.name}
           </Text>
           <View style={{ flexDirection: "row" }}>
-            <Image source={iconRate} />
-            <Image source={iconRate} />
-            <Image source={iconRate} />
+            <RenderRate number={item.rate} />
           </View>
         </View>
         <TouchableOpacity onPress={() => alert("View")} style={styles.btnBook}>
